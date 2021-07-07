@@ -13,7 +13,7 @@
         <tomcat.version>8.5.2</tomcat.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <main-class>io.muic.ooc.webapp.Webapp</main-class>
+        <main-class> io.muic.ooc.webapp.Webapp </main-class>
     </properties>
     <dependencies>
         <dependency>
@@ -86,12 +86,6 @@
                                     <mainClass> ${main-class}</mainClass>
                                 </transformer>
                             </transformers>
-                            <programs>
-                                <program>
-                                    <mainClass>io.muic.ooc.webapp.Webapp</mainClass>
-                                    <name>webapp</name>
-                                </program>
-                            </programs>
                         </configuration>
                     </execution>
                 </executions>
