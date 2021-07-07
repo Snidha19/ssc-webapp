@@ -17,7 +17,7 @@ public class DBService {
 
     public DBService() {
         this.jdbcDriverStr = "com.mysql.jdbc.Driver";
-        this.jdbcURL = "jdbc:mysql://localhost:3306/ssc-webapp";
+        this.jdbcURL = "jdbc:mysql://localhost:3306/ssc_webapp";
         try {
             Class.forName(jdbcDriverStr);
         } catch (ClassNotFoundException e) {
