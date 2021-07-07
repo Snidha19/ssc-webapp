@@ -28,9 +28,9 @@ public class AddUserServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/addUser.jsp");
-        rd.include(request, response);
-    }
+                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/addUser.jsp");
+                rd.include(request, response);
+        }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,15 +40,14 @@ public class AddUserServlet extends HttpServlet implements Routable {
             String password = request.getParameter("password");
             String firstname = request.getParameter("firstname");
             String lastname = request.getParameter("lastname");
-            if (!database.checkUser(username)){
-                database.insertUser(username,password,firstname,lastname);
-                response.sendRedirect("/");
-            }
-            else{
+            if (database.checkUser(username)) {
                 String error = "Username exists";
                 request.setAttribute("error", error);
                 RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/addUser.jsp");
                 rd.include(request, response);
+            } else {
+                database.insertUser(username, password, firstname, lastname);
+                response.sendRedirect("/");
             }
         }
     }
