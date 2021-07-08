@@ -24,7 +24,7 @@ public class DBService {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection(jdbcURL, "tasfia", "bullshit#1");
+            connection = DriverManager.getConnection(jdbcURL, "tasfia", "Bismillah#1");
             statement = connection.createStatement();
             createTable();
         }
