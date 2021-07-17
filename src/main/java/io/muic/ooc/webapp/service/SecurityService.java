@@ -29,7 +29,10 @@ public class SecurityService {
     public boolean authenticate(String username, String password, HttpServletRequest request) {
         if (database.checkUser(username)){
             String passwordInDB = database.getPassword(username);
+            System.out.println(" passwordInDB: " + passwordInDB);
+            System.out.println(" password: " + password);
             boolean isMatched = BCrypt.checkpw(password, passwordInDB);
+
             if (isMatched) {
                 request.getSession().setAttribute("username", username);
                 return true;

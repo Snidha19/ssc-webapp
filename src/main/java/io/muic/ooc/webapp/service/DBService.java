@@ -17,14 +17,14 @@ public class DBService {
 
     public DBService() {
         this.jdbcDriverStr = "com.mysql.jdbc.Driver";
-        this.jdbcURL = "jdbc:mysql://localhost:3306/ssc_webapp";
+        this.jdbcURL = "jdbc:mysql://localhost:3306/ssc-webapp";
         try {
             Class.forName(jdbcDriverStr);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection(jdbcURL, "tasfia", "Bismillah#1");
+            connection = DriverManager.getConnection(jdbcURL, "root", "Bismillah#1");
             statement = connection.createStatement();
             createTable();
         }
@@ -56,6 +56,7 @@ public class DBService {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
         return false;
     }
 
@@ -71,6 +72,7 @@ public class DBService {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
         return null;
     }
 
@@ -87,6 +89,7 @@ public class DBService {
         catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
     }
 
 
@@ -103,6 +106,7 @@ public class DBService {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
         return users;
     }
 
@@ -119,6 +123,7 @@ public class DBService {
         catch (SQLException throwables){
             throwables.printStackTrace();
         }
+
         return null;
     }
 
@@ -129,6 +134,7 @@ public class DBService {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
     }
 
     public void updateUser(String username, String password, String firstname, String lastname){
